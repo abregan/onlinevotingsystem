@@ -1,0 +1,48 @@
+<div class="main-content">
+    <h1>LIST OF VOTERS</h1><br>
+    <div class="left-panel">
+      <table border="1" class="table">
+        <thead class="header">
+          <tr >
+            <th>ID</th>
+            <th>USER NAME</th>
+            <th>GENDER</th>
+            <th>DATE OF BIRTH</th>
+            <th>EMAIL</th>
+            <th>ADDRESS</th>
+            <th>MOBILE No.</th>
+            <th>VOTING CARD NUMBER</th>
+            <th>ACCOUNT STATUS</th>
+            <th colspan="2">ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let voter of allVoters">
+            <td>{{ voter?.userId }}</td>
+            <td>{{ voter?.userName }}</td>
+            <td>{{voter?.userGender}}</td>
+            <td>{{voter?.userDateOfBirth}}</td>
+            <td>{{voter?.userEmail}}</td>
+            <td>{{voter?.userAddress}}</td>
+            <td>{{voter?.userMobileNumber}}</td>
+            <td>{{voter?.userVotingCardNumber}}</td>
+            <td>
+              <span *ngIf="voter?.activateAccount === true" class="btn btn-success"> Active</span>
+              <span *ngIf="voter?.activateAccount === false">
+                <button (click)="activateUser(voter)" class="btn btn-primary">Not Active</button>
+              </span>
+            </td>
+           
+  
+            <td><button (click)="updateUser(voter?.userId)" class="btn btn-warning"><i class="fa fa-pencil"
+                  aria-hidden="true"></i>&nbsp;Update</button></td>
+
+                  <td><button (click)="deleteUser(voter?.userId)" class="btn btn-danger"><i class="fa fa-trash"
+                    aria-hidden="true"></i>&nbsp;Delete</button></td>
+            <!-- <td><button (click)="getAccountDetail(voter?.userId)"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;Detail</button></td> -->
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="allVoters.length === 0">There is no any account currently</div>
+    </div>
+  </div>

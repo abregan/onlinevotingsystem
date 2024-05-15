@@ -1,0 +1,29 @@
+<div class="main">
+    <h1>ELECTION RESULT</h1><br>
+    <div class="left-panel">
+        <table border="1" class="table">
+            <thead>
+            <tr class="header">
+                <th>PARTY LOGO</th>
+                <th>PARTY LEADER NAME</th>
+                <th>PARTY NAME</th>
+                <th>VOTES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let party of allParty">
+                <td>
+                    <img [src]="party?.partyLogo">
+                </td>
+                <td>
+                    {{party?.partyLeaderName}}
+                </td>
+                <td>
+                    {{party?.partyName}}
+                </td>
+                <td>{{party?.votes}}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>

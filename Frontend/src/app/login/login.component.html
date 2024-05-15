@@ -1,0 +1,61 @@
+<div class="main">
+    <div class="forms" >
+        <h2>Login Here</h2>
+        <div *ngIf="errorMessage && errorMessage !== ''" class="error" id="erroediv">
+            {{errorMessage}}
+        </div>
+        <div class="radiobtn">
+             <input type="radio" value="voter" name="voter" [(ngModel)]="loginType" (click)="clearMessage()" />Voter &nbsp;
+             <input type="radio" value="admin" name="admin" [(ngModel)]="loginType" (click)="clearMessage()" /> Admin
+        </div>
+        <div *ngIf="loginType === 'voter'">
+            <div class="voterform">
+                <div class="form-group">
+                <input type="text" class="box" placeholder="Enter Voting Number" [(ngModel)]="voterCardNumber">
+            </div>
+            <!-- <div class="form-group">
+                
+                <input type="Password" class="box" placeholder="Enter Password" [(ngModel)]="password" id="password"> 
+                <i class="fa fa-eye" *ngIf="isShowPassword" (click)="showHidePassword()"></i>
+                <i class="fa fa-eye-slash" *ngIf="!isShowPassword" (click)="showHidePassword()"></i>  
+            </div> -->
+            <div class="form-group password-item">
+                <div class="left">
+                    <input type="Password" class="box" placeholder="Enter Password" [(ngModel)]="password" id="password"> 
+                </div>
+                <div class="right">
+                    <i class="fa fa-eye" *ngIf="isShowPassword" (click)="showHidePassword()"></i>
+                    <i class="fa fa-eye-slash" *ngIf="!isShowPassword" (click)="showHidePassword()"></i>  
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btnn" (click)="login()" class="btn btn-primary"> Login</button>
+            </div>
+            </div>
+        </div>
+        <div *ngIf="loginType === 'admin'">
+            <div class="adminform">
+                <div class="form-group">
+                <input type="email" class="box" name="email" placeholder="Enter Your Mail Id" [(ngModel)]="email">
+            </div>
+            <div class="form-group password-item">
+                <div class="left">
+                    <input type="Password" class="box" placeholder="Enter Password" [(ngModel)]="password" id="password"> 
+                </div>
+                <div class="right">
+                    <i class="fa fa-eye" *ngIf="isShowPassword" (click)="showHidePassword()"></i>
+                    <i class="fa fa-eye-slash" *ngIf="!isShowPassword" (click)="showHidePassword()"></i>  
+                </div>
+            </div>
+            <div class="form-group">
+            
+                <!-- <button class="btn btn-primary" (click)="login()"> Login</button> -->
+                <button type="button" class="btn btn-primary" (click)="login()">Login</button>
+            </div>
+            </div>
+        </div>
+        <div class="forgotpassword" (click)="openForgotPassword()">
+            Forgot Password ?
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #14184e;
+  height: 60px;
+}
+.brand-logo{
+  width: 230px;
+  height: 100px;
+  /* transform: rotate(311deg); */
+  border-radius: 20%;
+  /* padding-top: 40px; */
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.nav-items {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #14184e;
+  margin-right: 20px;
+  height: 60px;
+  
+}
+
+.head {
+  text-decoration: none;
+  color: hsl(189, 71%, 46%);
+  padding-right: 30px;
+  font-weight: 600;
+  font-size: 25px;
+  cursor: pointer;
+}
+.head:hover{
+  color: rgb(30, 114, 210);
+}

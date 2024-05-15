@@ -1,0 +1,45 @@
+<div class="main">
+    <div class="forms">
+        <h1>Register</h1>
+        <div *ngIf="errorMessage && errorMessage !== ''" class="error" id="erroediv">
+            {{errorMessage}}
+        </div>
+        <p id="create">Create your account. It's free and only takes a minute</p>
+        <div class="details">
+            <div class="form-group">
+            <input id="i1" type="text"  class="box" placeholder="User Name" [(ngModel)]="userName">
+        </div>
+        <div class="form-group">
+            <input id="i2" type="text" class="box" placeholder="Voting Number" [(ngModel)]="userVotingCardNumber">
+        </div>
+        <div class="form-group">
+            <input id="i3" type="address" class="box" placeholder="Address" [(ngModel)]="userAddress">
+        </div>
+        <div class="form-group">
+            <input id="i4" type="number"  class="box"placeholder="Mobile Number" [(ngModel)]="userMobileNumber">
+           
+        </div>
+        <div class="form-group">
+             <input id="i5" type="email"  class="box" placeholder="example@gmail.com" [(ngModel)]="userEmail">
+            </div>
+            <div class="form-group">
+             <input id="i6" type="password"  class="box" placeholder="Password" [(ngModel)]="userPassword">
+            </div>
+            <div class="form-group">
+             <!-- <input id="i7" type="date" placeholder="Birthdate" [(ngModel)]="userDateOfBirth"> -->
+            <input id="i8" type="date" class="box" placeholder="Birthdate" max={{maxDate}} required [(ngModel)]="userDateOfBirth" />
+            </div>
+        </div>
+        
+        <div class="radiobtn">
+            <input id="radio" type="radio" [(ngModel)]="userGender"  value="female"> Female &nbsp;
+            <input type="radio" [(ngModel)]="userGender"  name="Gender" value="male"> Male 
+        </div>
+        <div class="checkbox">
+            <label> <input type="checkbox" id="terms"> I Agree terms & condition </label>
+        </div>
+        <div class="btn">
+            <button id="register_btn" (click)="registerUser()" class="btn btn-primary">Register Now</button>
+        </div>
+    </div>
+</div>

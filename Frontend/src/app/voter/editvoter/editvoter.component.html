@@ -1,0 +1,22 @@
+<div class="main">
+    <div class="forms">
+        <h2>EDIT VOTER</h2>
+        <div class="details">
+            <div class="form-group">
+            <input id="i1" type="text" class="box" [(ngModel)]="username">
+            </div>
+            <div class="form-group">
+            <input id="i2" type="text"  class="box" [(ngModel)]="address">
+        </div>
+        <div class="form-group">
+            <input id="i3" type="number" class="box" [(ngModel)]="mobile">
+        </div>
+        <div class="form-group">
+            <input id="i4" type="text" class="box" [(ngModel)]="email">
+        </div>
+        <div class="form-group">
+            <input id="i5" type="date" class="box" [(ngModel)]="dateofbirth">
+        </div>
+        <div class="form-group">
+            <button (click)="onUpdate()" class="btn btn-primary">Submit</button>
+        </div>

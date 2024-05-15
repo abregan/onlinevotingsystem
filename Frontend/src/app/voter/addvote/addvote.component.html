@@ -1,0 +1,77 @@
+<div class="main">
+    <div *ngIf="user && user?.status === 'voted'">
+       <h1>You Already Voted</h1> 
+    </div>
+    
+    <div *ngIf="user && user?.status === null" class="party">
+        <div class="left-panel">
+            <table border="1" class="table">
+                <thead>
+                <tr class="header">
+                    <th>PARTY LOGO</th>
+                    <th>PARTY NAME</th>
+                    <th>PARTY LEADER  NAME</th>
+                    <th colspan="2">VOTE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let party of allParty">
+                    <td>
+                        <img [src]="party?.partyLogo">
+                    </td>
+                    <td>
+                        {{party?.partyName}}
+                    </td>
+                    <td>
+                        {{party?.partyLeaderName}}
+                    </td>
+                    <td>
+                        <input type="radio" class="radio-btn" [name]="party?.partyName" [value]="party?.partyId"
+                [(ngModel)]="selectedParty" />
+                    </td>
+                   
+                </tr>
+            </tbody>
+            </table>
+            <button (click)="submit()" id="btnn" class="btn btn-primary">Submit</button>
+        </div>
+        <!-- <div *ngFor="let party of allParty">
+            <img [src]="party?.partyLogo"><input type="radio" class="radio-btn" [name]="party?.partyName" [value]="party?.partyId"
+                [(ngModel)]="selectedParty" /> {{party?.partyLeaderName}} ({{party?.partyName}})
+            
+        </div> -->
+    </div>
+    </div>
+    <!-- <div class="left-panel">
+        <table border="1" class="table">
+            <thead>
+            <tr class="header">
+                <th>PARTY LOGO</th>
+                <th>PARTY NAME</th>
+                <th>PARTY LEADER  NAME</th>
+                <th colspan="2">OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let party of allParty">
+                <td>
+                    <img [src]="party?.partyLogo">
+                </td>
+                <td>
+                    {{party?.partyName}}
+                </td>
+                <td>
+                    {{party?.partyLeaderName}}
+                </td>
+                <td>
+                    <button class="btn btn-warning" (click)="onEdit(party)" ><i class="fa fa-pencil"
+                        aria-hidden="true"></i>&nbsp;Edit</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="onDelete(party)" ><i class="fa fa-trash"
+                        aria-hidden="true"></i>&nbsp;Delete</button>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div> -->
